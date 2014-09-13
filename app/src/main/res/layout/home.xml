@@ -178,7 +178,6 @@
             android:layout_height="50dp"
             android:onClick="camera"
             android:background="@drawable/camera"
-            android:text="c"
             />
         <Button
             android:id="@+id/btn_profile"
