@@ -22,17 +22,17 @@ public class Activity_profile extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        Button profile =(Button)findViewById(R.id.btn_feed);
+        Button feed =(Button)findViewById(R.id.btn_feed);
         TextView display_name = (TextView)findViewById(R.id.username);
         String name = getIntent().getStringExtra("user-name");
 
         display_name.setText(name);
 
-        profile.setOnClickListener(new View.OnClickListener() {
+        feed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent_profile = new Intent(getApplicationContext(),Activity_feed.class);
-                startActivity(intent_profile);
+                Intent intent_feed = new Intent(getApplicationContext(),Activity_feed.class);
+                startActivity(intent_feed);
             }
         });
 
@@ -52,10 +52,7 @@ public class Activity_profile extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 
     /**

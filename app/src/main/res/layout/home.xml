@@ -4,7 +4,17 @@
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sw_layout"
+        android:layout_above="@+id/footer_profile"
+        android:layout_weight="1"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     <LinearLayout
         android:id="@+id/info_profile"
         android:layout_width="fill_parent"
@@ -106,64 +116,54 @@
 
         </LinearLayout>
 
-    <TabHost
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_weight="1"
-        android:id="@+id/tabHost">
-
-        <LinearLayout
+        <TabHost
+            android:id="@+id/TabHost_profile"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_margin="2dp"
-            android:orientation="vertical">
-
-            <TabWidget
-                android:id="@android:id/tabs"
+            android:layout_height="fill_parent" >
+            <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"></TabWidget>
-
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-
-                <LinearLayout
-                    android:id="@+id/published"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+                <!-- TabWidget used to creat tabs -->
+                <TabWidget
+                    android:id="@android:id/tabs"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical"
-
-                    >
-
-                    </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/watching"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+                </TabWidget>
+                <!-- container of tabs -->
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical"
+                    android:layout_height="fill_parent" >
 
-                    >
-
-                    </LinearLayout>
-
-
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
-
-    <ViewSwitcher
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/viewSwitcher"
-        android:layout_gravity="right" />
+                    <!-- tab N°1 -->
+                    <!-- Inclusion of the interface -->
+                    <include
+                        android:id="@+id/Published"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        layout="@layout/published" >
+                    </include>
+                    <!-- tab N°2 -->
+                    <!-- Inclusion of the interface -->
+                    <include
+                        android:id="@+id/Watching"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        layout="@layout/watching" >
+                    </include>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+    </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/footer_profile">
 
         <Button
             android:id="@+id/btn_feed"
@@ -176,8 +176,8 @@
             android:id="@+id/btn_camera"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:onClick="camera"
             android:background="@drawable/camera"
+            android:onClick="camera"
             />
         <Button
             android:id="@+id/btn_profile"
