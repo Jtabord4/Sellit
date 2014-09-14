@@ -11,152 +11,208 @@
         android:layout_above="@+id/footer_profile"
         android:layout_weight="1"
         android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-    <LinearLayout
-        android:id="@+id/info_profile"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="130dp"
-            android:layout_height="170dp"
-            android:scaleType="center"
-            android:layout_marginTop="2dp"
-            android:layout_marginLeft="2dp"
-            android:src="@drawable/monkey"
-        />
-
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/username"
+            <LinearLayout
+                android:id="@+id/info_profile"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:text="@string/type_name"
-                android:textSize="20dp"
-                android:textStyle="bold"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="170dp"
+                    android:scaleType="center"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/monkey"
                 />
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:orientation="horizontal"
-                    android:layout_weight="2">
-
-
+                    android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/followers"
+                        android:id="@+id/username"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="5dp"
-                        android:textSize="15dp"
-                        android:text="@string/followers"
+                        android:text="@string/type_name"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
                         />
 
-
-
-                    <TextView
-                        android:id="@+id/following"
+                    <LinearLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginTop="10dp"
-                        android:textSize="15dp"
-                        android:text="@string/following"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="2">
+
+
+
+                        <TextView
+                            android:id="@+id/followers"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:textSize="15dp"
+                            android:text="@string/followers"
                             />
+
+
+
+                        <TextView
+                            android:id="@+id/following"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginTop="10dp"
+                            android:textSize="15dp"
+                            android:text="@string/following"
+                                />
+
+                    </LinearLayout>
+
+                     <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                         android:layout_weight="2"
+                        android:orientation="horizontal">
+
+                         <TextView
+                             android:id="@+id/n_followers"
+                             android:layout_width="fill_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:layout_marginTop="5dp"
+                             android:layout_marginLeft="5dp"
+
+                             android:textSize="15dp"
+                             android:text="@string/followers"
+                             />
+
+
+
+                         <TextView
+                             android:id="@+id/n_following"
+                             android:layout_width="fill_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="1"
+                             android:layout_marginTop="5dp"
+                             android:textSize="15dp"
+                             android:text="@string/following"
+                             />
+
+
+                     </LinearLayout>
 
                 </LinearLayout>
 
-                 <LinearLayout
+            </LinearLayout>
+
+            <TabHost
+                android:id="@+id/tabHost"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+                <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                     android:layout_weight="2"
-                    android:orientation="horizontal">
-
-                     <TextView
-                         android:id="@+id/n_followers"
-                         android:layout_width="fill_parent"
-                         android:layout_height="wrap_content"
-                         android:layout_weight="1"
-                         android:layout_marginTop="5dp"
-                         android:layout_marginLeft="5dp"
-
-                         android:textSize="15dp"
-                         android:text="@string/followers"
-                         />
-
-
-
-                     <TextView
-                         android:id="@+id/n_following"
-                         android:layout_width="fill_parent"
-                         android:layout_height="wrap_content"
-                         android:layout_weight="1"
-                         android:layout_marginTop="5dp"
-                         android:textSize="15dp"
-                         android:text="@string/following"
-                         />
-
-
-                 </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <TabHost
-            android:id="@+id/TabHost_profile"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical" >
-                <!-- TabWidget used to creat tabs -->
-                <TabWidget
-                    android:id="@android:id/tabs"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible">
-                </TabWidget>
-                <!-- container of tabs -->
-                <FrameLayout
-                    android:id="@android:id/tabcontent"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" >
-
-                    <!-- tab N°1 -->
-                    <!-- Inclusion of the interface -->
-                    <include
-                        android:id="@+id/Published"
-                        android:layout_width="fill_parent"
-                        android:layout_height="match_parent"
-                        layout="@layout/published" >
-                    </include>
-                    <!-- tab N°2 -->
-                    <!-- Inclusion of the interface -->
-                    <include
-                        android:id="@+id/Watching"
+                    android:orientation="vertical" >
+                    <!-- TabWidget used to creat tabs -->
+                    <TabWidget
+                        android:id="@android:id/tabs"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        layout="@layout/watching" >
-                    </include>
-                </FrameLayout>
-            </LinearLayout>
-        </TabHost>
-    </LinearLayout>
+                        android:visibility="visible">
+                    </TabWidget>
+                    <!-- container of tabs -->
+                    <FrameLayout
+                        android:id="@android:id/tabcontent"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" >
+
+                        <!-- tab N1 -->
+                        <LinearLayout
+                            android:id="@+id/tab_published"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:id="@+id/app_nametext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/app_name"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/reg_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/reg"
+
+                                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                            <EditText
+                                android:id="@+id/name_edit"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/type_name"
+
+                                />
+
+                            <EditText
+                                android:id="@+id/pass_edit"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/type_pass"
+                                android:inputType="textPassword" />
+
+                            <EditText
+                                android:id="@+id/email_edit"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="@string/type_email"
+                                android:inputType="textEmailAddress" >
+
+                                <requestFocus />
+                            </EditText>
+
+                            <Button
+                                android:id="@+id/btn_reg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/button_reg" />
+
+
+
+                        </LinearLayout>
+                        <!-- tab N2 -->
+
+                        <LinearLayout
+                            android:id="@+id/tab_watching"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical">
+
+
+
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </TabHost>
+        </LinearLayout>
     </ScrollView>
 
     <LinearLayout
