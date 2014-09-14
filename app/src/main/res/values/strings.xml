@@ -19,6 +19,7 @@
     <string name="description">Description of the item</string>
     <string name="feed">Home</string>
     <string name="profile">Profile</string>
+    <string name="photoname">Type the name of the photo</string>
 
 
 </resources>
