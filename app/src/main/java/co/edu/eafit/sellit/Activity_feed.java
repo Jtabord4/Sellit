@@ -78,6 +78,7 @@ public class    Activity_feed extends Activity {
             getContentResolver().notifyChange(selectedImage, null);
 
             ImageView imageView = (ImageView) findViewById(R.id.posted_img1);
+            ImageView imageView2 = (ImageView) findViewById(R.id.posted_img5);
             ContentResolver cr = getContentResolver();
             Bitmap bitmap;
 

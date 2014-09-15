@@ -1,0 +1,62 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="170dp"
+            android:scaleType="center"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="2dp"
+            android:src="@drawable/monkey"/>
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="@string/photoname"
+            android:layout_weight="1">
+
+        </EditText>
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:hint="@string/description"
+            android:layout_weight="1">
+
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/footer_camera">
+
+        <Button
+            android:id="@+id/btn_feed"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/feed"
+            />
+
+        <Button
+            android:id="@+id/btn_profile"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/profile"><requestFocus /></Button>
+
+
+
+    </LinearLayout>
+</LinearLayout>

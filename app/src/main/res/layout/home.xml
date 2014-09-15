@@ -145,55 +145,13 @@
                             android:orientation="vertical">
 
 
-                            <TextView
-                                android:id="@+id/app_nametext"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/app_name"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/reg_text"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/reg"
-
-                                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                            <EditText
-                                android:id="@+id/name_edit"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:hint="@string/type_name"
-
+                            <ImageView
+                                android:id="@+id/posted_img5"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:scaleType="center"
+                                android:src="@drawable/monkey"
                                 />
-
-                            <EditText
-                                android:id="@+id/pass_edit"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:hint="@string/type_pass"
-                                android:inputType="textPassword" />
-
-                            <EditText
-                                android:id="@+id/email_edit"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:ems="10"
-                                android:hint="@string/type_email"
-                                android:inputType="textEmailAddress" >
-
-                                <requestFocus />
-                            </EditText>
-
-                            <Button
-                                android:id="@+id/btn_reg"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/button_reg" />
 
 
 
@@ -206,7 +164,13 @@
                             android:layout_height="fill_parent"
                             android:orientation="vertical">
 
-
+                            <ImageView
+                                android:id="@+id/posted_img6"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:scaleType="center"
+                                android:src="@drawable/monkey"
+                                />
 
                         </LinearLayout>
                     </FrameLayout>
