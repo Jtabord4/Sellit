@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:id="@+id/">
+    android:id="@+id/layout_preferences">
 
     <TextView
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sports"
-        android:id="@+id/checkBox"
+        android:id="@+id/cb_sports"
         android:layout_weight="0.07"
         android:checked="false" />
 
@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/jewelry"
-        android:id="@+id/checkBox2"
+        android:id="@+id/cb_jewelry"
         android:layout_weight="0.07"
         android:checked="false" />
 
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tech"
-        android:id="@+id/checkBox3"
+        android:id="@+id/cb_technology"
         android:layout_weight="0.08"
         android:checked="false" />
 
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/books"
-        android:id="@+id/checkBox4"
+        android:id="@+id/cb_books"
         android:layout_weight="0.08"
         android:checked="false" />
 
@@ -50,14 +50,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/clothes"
-        android:id="@+id/checkBox5"
+        android:id="@+id/cb_clothes"
         android:layout_weight="0.10"
         android:checked="false" />
 
     <CheckBox
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox6"
+        android:id="@+id/cb_kids"
         android:layout_weight="0.09"
         android:checked="false"
         android:text="@string/kids" />
@@ -66,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/beauty"
-        android:id="@+id/checkBox7"
+        android:id="@+id/cb_beauty"
         android:layout_weight="0.09"
         android:checked="false" />
 
@@ -74,7 +74,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/agree"
-        android:id="@+id/button2"
+        android:id="@+id/btn_preferences_agree"
         android:layout_gravity="end"
         android:layout_weight="0.02" />
 
