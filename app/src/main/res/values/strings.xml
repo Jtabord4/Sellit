@@ -21,6 +21,14 @@
     <string name="profile">Profile</string>
     <string name="photoname">name</string>
     <string name="namep">name</string>
-
+    <string name="preferencesText">Choose your preferences: </string>
+    <string name="sports">Sports</string>
+    <string name="clothes">Clothes</string>
+    <string name="kids">Kids</string>
+    <string name="beauty">Beauty</string>
+    <string name="books">Books</string>
+    <string name="tech">Technology</string>
+    <string name="jewelry">Jewelry</string>
+    <string name="agree">Agree</string>
 
 </resources>
