@@ -15,20 +15,21 @@ import android.widget.TextView;
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
  */
-public class Activity_profile extends Activity {
+public class Activity_transition extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        setContentView(R.layout.transicioncamara);
 
-        Button feed =(Button)findViewById(R.id.btn_feed);
+        Button publicar =(Button)findViewById(R.id.btn_publicar);
+
         /*TextView display_name = (TextView)findViewById(R.id.username);
         String name = getIntent().getStringExtra("user-name");
 
         display_name.setText(name);*/
 
-        feed.setOnClickListener(new View.OnClickListener() {
+        publicar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent_feed = new Intent(getApplicationContext(),Activity_feed.class);

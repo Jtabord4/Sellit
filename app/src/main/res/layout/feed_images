@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/layout_feed"
+    >
+
+            <ImageView
+                android:id="@+id/posted_img1"
+                android:layout_height="400dp"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/monkey"
+                />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp"
+                >
+
+                <TextView
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:textSize="40dp"
+                    android:text="@string/price"
+                    />
+
+                <Button
+                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:text="@string/buy"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:text="@string/description"
+                android:textSize="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                />
+
+</LinearLayout>

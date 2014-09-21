@@ -61,7 +61,7 @@ public class Activity_login extends PlusBaseActivity{
 
     @Override
     protected void onPlusClientSignIn() {
-        Intent intent_preferences = new Intent(getApplicationContext(),Activity_preferences.class);
+        Intent intent_preferences = new Intent(getApplicationContext(),activity_preferences.class);
         startActivity(intent_preferences);
     }
 

@@ -21,6 +21,7 @@ import android.widget.*;
 
 import java.io.File;
 import java.net.URI;
+import java.util.Random;
 
 
 /**
@@ -37,6 +38,15 @@ public class    Activity_feed extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.feed);
+
+        LinearLayout mainLayout = (LinearLayout)findViewById(R.id.horizontal_view);
+
+        View view = getLayoutInflater().inflate(R.layout.feed_images, null);
+        View view2 = getLayoutInflater().inflate(R.layout.feed_images, null);
+
+
+        mainLayout.addView(view);
+        mainLayout.addView(view2);
 
 
         Button btn_profile =(Button)findViewById(R.id.btn_profile);
@@ -63,7 +73,11 @@ public class    Activity_feed extends Activity {
 
     private void takePhoto(View v){
         Intent intentcamera = new Intent("android.media.action.IMAGE_CAPTURE");
-        File photo = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Picture.jpg");
+        String dir = Environment.DIRECTORY_PICTURES ;
+        Random random = new Random();
+        int randomInt = random.nextInt(100);
+        String name = "img" + randomInt;
+        File photo = new File(dir, name);
         imageUri = Uri.fromFile(photo);
         intentcamera.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
         startActivityForResult(intentcamera, TAKE_PICTURE);
@@ -77,8 +91,7 @@ public class    Activity_feed extends Activity {
             Uri selectedImage = imageUri;
             getContentResolver().notifyChange(selectedImage, null);
 
-            ImageView imageView = (ImageView) findViewById(R.id.posted_img1);
-            ImageView imageView2 = (ImageView) findViewById(R.id.posted_img5);
+            ImageView imageView = (ImageView) findViewById(R.id.posted_img);
             ContentResolver cr = getContentResolver();
             Bitmap bitmap;
 
@@ -86,6 +99,8 @@ public class    Activity_feed extends Activity {
                 bitmap = MediaStore.Images.Media.getBitmap(cr, selectedImage);
                 imageView.setImageBitmap(bitmap);
                 Toast.makeText(Activity_feed.this, selectedImage.toString(), Toast.LENGTH_LONG).show();
+
+
             } catch (Exception e){
                 Log.e(logtag, e.toString());
             }
@@ -121,7 +136,7 @@ public class    Activity_feed extends Activity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.activity_my, container, false);
+            View rootView = inflater.inflate(R.layout.feed, container, false);
             return rootView;
         }
     }

@@ -1,0 +1,82 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/transicion_layout">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:layout_weight="2">
+    <ImageView
+        android:id="@+id/posted_img"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:src="@drawable/monkey"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:scaleType="fitStart"
+        android:layout_weight="1">
+    </ImageView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="10dp"
+            android:text="@string/subirProd"
+            android:textStyle="bold"
+            android:textSize="20dp">
+        </TextView>
+
+        <EditText
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:hint="@string/photoname"
+            android:layout_marginTop="30dp">
+
+        </EditText>
+
+        <EditText
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:hint="@string/price"
+            android:layout_marginTop="10dp">
+
+        </EditText>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="10dp"
+            android:hint="@string/description"/>
+
+
+
+        <Button
+            android:id="@+id/btn_publicar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/subirProd"
+
+            />
+
+    </LinearLayout>
+</LinearLayout>

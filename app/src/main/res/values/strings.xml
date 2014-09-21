@@ -24,5 +24,7 @@
     <string name="tech">Tecnología</string>
     <string name="jewelry">Joyería</string>
     <string name="agree">Aceptar</string>
+    <string name="subirProd">Publicar</string>
+    <string name="type_name">Usuario</string>
 
 </resources>
