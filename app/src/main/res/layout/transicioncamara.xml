@@ -36,6 +36,7 @@
         </TextView>
 
         <EditText
+            android:id="@+id/nombre_foto"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:hint="@string/photoname"
@@ -44,6 +45,7 @@
         </EditText>
 
         <EditText
+            android:id="@+id/precio_prod"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
             android:hint="@string/price"
@@ -63,6 +65,7 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/descripcion_prod"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:layout_marginTop="10dp"

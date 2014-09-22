@@ -23,11 +23,11 @@ public class Activity_profile extends Activity {
         setContentView(R.layout.home);
 
         Button feed =(Button)findViewById(R.id.btn_feed);
+
         /*TextView display_name = (TextView)findViewById(R.id.username);
         String name = getIntent().getStringExtra("user-name");
 
         display_name.setText(name);*/
-
         feed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

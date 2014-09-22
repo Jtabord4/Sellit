@@ -13,6 +13,16 @@
                 android:src="@drawable/monkey"
                 />
 
+            <TextView
+                android:id="@+id/name_feed"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                android:text="@string/namep">
+
+            </TextView>
+
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -22,10 +32,11 @@
                 >
 
                 <TextView
+                    android:id="@+id/price_feed"
                     android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
                     android:layout_weight="1"
-                    android:textSize="40dp"
+                    android:textSize="30dp"
                     android:text="@string/price"
                     />
 
@@ -39,6 +50,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/description_feed"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
 

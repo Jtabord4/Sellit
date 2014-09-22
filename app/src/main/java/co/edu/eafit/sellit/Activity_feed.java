@@ -27,7 +27,7 @@ import java.util.Random;
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
  */
-public class    Activity_feed extends Activity {
+public class Activity_feed extends Activity {
 
     private static String logtag = "cameraApp";
     private static int TAKE_PICTURE = 1;
@@ -41,11 +41,25 @@ public class    Activity_feed extends Activity {
 
         LinearLayout mainLayout = (LinearLayout)findViewById(R.id.horizontal_view);
 
-        View view = getLayoutInflater().inflate(R.layout.feed_images, null);
-        View view2 = getLayoutInflater().inflate(R.layout.feed_images, null);
 
+
+        View view = getLayoutInflater().inflate(R.layout.feed_images, null);
+
+        TextView display_name = (TextView)view.findViewById(R.id.name_feed);
+        String name = getIntent().getStringExtra("product-name");
+        display_name.setText(name);
+
+        TextView display_price = (TextView)view.findViewById(R.id.price_feed);
+        String price = getIntent().getStringExtra("product-price");
+        display_price.setText(price);
+
+        TextView display_description = (TextView)view.findViewById(R.id.description_feed);
+        String description = getIntent().getStringExtra("product-description");
+        display_description.setText(description);
 
         mainLayout.addView(view);
+
+        View view2 = getLayoutInflater().inflate(R.layout.feed_images, null);
         mainLayout.addView(view2);
 
 

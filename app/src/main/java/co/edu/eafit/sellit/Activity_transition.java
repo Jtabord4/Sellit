@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -22,6 +23,8 @@ public class Activity_transition extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.transicioncamara);
 
+
+
         Button publicar =(Button)findViewById(R.id.btn_publicar);
 
         /*TextView display_name = (TextView)findViewById(R.id.username);
@@ -32,7 +35,21 @@ public class Activity_transition extends Activity {
         publicar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                EditText name_field = (EditText)findViewById(R.id.nombre_foto);
+                EditText price_field = (EditText)findViewById(R.id.precio_prod);
+                EditText description_field = (EditText)findViewById(R.id.descripcion_prod);
+
+
+                String name = name_field.getText().toString();
+                String price = price_field.getText().toString();
+                String description = description_field.getText().toString();
+
                 Intent intent_feed = new Intent(getApplicationContext(),Activity_feed.class);
+                intent_feed.putExtra("product-name", name);
+                intent_feed.putExtra("product-price", price);
+                intent_feed.putExtra("product-description", description);
+
                 startActivity(intent_feed);
             }
         });
