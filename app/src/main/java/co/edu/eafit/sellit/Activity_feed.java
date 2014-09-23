@@ -23,17 +23,11 @@ import java.io.File;
 import java.net.URI;
 import java.util.Random;
 
-
-/**
- * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
- */
 public class Activity_feed extends Activity {
 
     private static String logtag = "cameraApp";
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
     private Uri imageUri;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
