@@ -6,7 +6,7 @@
     >
 
             <ImageView
-                android:id="@+id/posted_img1"
+                android:id="@+id/feed_image"
                 android:layout_height="400dp"
                 android:layout_width="match_parent"
                 android:scaleType="fitXY"

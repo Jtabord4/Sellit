@@ -3,6 +3,7 @@ package co.edu.eafit.sellit;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -24,6 +26,9 @@ public class Activity_transition extends Activity {
         setContentView(R.layout.transicioncamara);
 
 
+        Bitmap bitmap  = getIntent().getParcelableExtra("name");
+        ImageView view = (ImageView) findViewById(R.id.posted_img);
+        view.setImageBitmap(bitmap);
 
         Button publicar =(Button)findViewById(R.id.btn_publicar);
 
@@ -36,16 +41,18 @@ public class Activity_transition extends Activity {
             @Override
             public void onClick(View view) {
 
+                ImageView image = (ImageView)findViewById(R.id.posted_img);
                 EditText name_field = (EditText)findViewById(R.id.nombre_foto);
                 EditText price_field = (EditText)findViewById(R.id.precio_prod);
                 EditText description_field = (EditText)findViewById(R.id.descripcion_prod);
 
-
+                Bitmap bitmap  = getIntent().getParcelableExtra("name");
                 String name = name_field.getText().toString();
                 String price = price_field.getText().toString();
                 String description = description_field.getText().toString();
 
                 Intent intent_feed = new Intent(getApplicationContext(),Activity_feed.class);
+                intent_feed.putExtra("product-image",bitmap);
                 intent_feed.putExtra("product-name", name);
                 intent_feed.putExtra("product-price", price);
                 intent_feed.putExtra("product-description", description);

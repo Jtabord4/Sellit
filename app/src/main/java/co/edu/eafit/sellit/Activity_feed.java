@@ -30,8 +30,9 @@ import java.util.Random;
 public class Activity_feed extends Activity {
 
     private static String logtag = "cameraApp";
-    private static int TAKE_PICTURE = 1;
+    private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
     private Uri imageUri;
+
 
 
     @Override
@@ -44,6 +45,10 @@ public class Activity_feed extends Activity {
 
 
         View view = getLayoutInflater().inflate(R.layout.feed_images, null);
+
+        ImageView image = (ImageView)view.findViewById(R.id.feed_image);
+        Bitmap bitmap  = getIntent().getParcelableExtra("product-image");
+        image.setImageBitmap(bitmap);
 
         TextView display_name = (TextView)view.findViewById(R.id.name_feed);
         String name = getIntent().getStringExtra("product-name");
@@ -86,40 +91,54 @@ public class Activity_feed extends Activity {
     };
 
     private void takePhoto(View v){
-        Intent intentcamera = new Intent("android.media.action.IMAGE_CAPTURE");
-        String dir = Environment.DIRECTORY_PICTURES ;
-        Random random = new Random();
-        int randomInt = random.nextInt(100);
-        String name = "img" + randomInt;
-        File photo = new File(dir, name);
-        imageUri = Uri.fromFile(photo);
-        intentcamera.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-        startActivityForResult(intentcamera, TAKE_PICTURE);
+        Intent intentcamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        startActivityForResult(intentcamera, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+
+
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent intent){
-        super.onActivityResult(requestCode, resultCode, intent);
-
-        if(resultCode == Activity.RESULT_OK){
-            Uri selectedImage = imageUri;
-            getContentResolver().notifyChange(selectedImage, null);
-
-            ImageView imageView = (ImageView) findViewById(R.id.posted_img);
-            ContentResolver cr = getContentResolver();
-            Bitmap bitmap;
-
-            try{
-                bitmap = MediaStore.Images.Media.getBitmap(cr, selectedImage);
-                imageView.setImageBitmap(bitmap);
-                Toast.makeText(Activity_feed.this, selectedImage.toString(), Toast.LENGTH_LONG).show();
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 
-            } catch (Exception e){
-                Log.e(logtag, e.toString());
+        Bitmap thumbnail = null;
+        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
+
+            if (resultCode == RESULT_OK) {
+
+                thumbnail = (Bitmap) data.getExtras().get("data");
+
+                Intent i = new Intent(this, Activity_transition.class);
+                i.putExtra("name", thumbnail);
+                startActivity(i);
+
+
+
             }
+
         }
-    }
+
+                /*Uri selectedImage = imageUri;
+                getContentResolver().notifyChange(selectedImage, null);
+
+                ImageView imageView = (ImageView) findViewById(R.id.posted_img);
+                ContentResolver cr = getContentResolver();
+                Bitmap bitmap;
+
+                try{
+                    bitmap = MediaStore.Images.Media.getBitmap(cr, selectedImage);
+                    imageView.setImageBitmap(bitmap);
+                    Toast.makeText(Activity_feed.this, selectedImage.toString(), Toast.LENGTH_LONG).show();
+
+
+                } catch (Exception e){
+                    Log.e(logtag, e.toString());
+                }*/
+
+
+        }
+
 
 
 
